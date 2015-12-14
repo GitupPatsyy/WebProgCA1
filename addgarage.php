@@ -5,6 +5,18 @@
  * Date: 18/11/2015
  * Time: 1:42 PM
  */
+function setValue($formdata, $fieldname)
+{
+    if (isset($formdata) && isset($formdata[$fieldname])) {
+        echo $formdata[$fieldname];
+    }
+
+}
+
+if (!isset($formdata)) {
+    $formdata = array();
+
+}
 
 
 ?>
@@ -15,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/text.css">
     <link rel="stylesheet" type="text/css" href="css/960.css">
+    <link rel="stylesheet" type="text/css" href="css/addgarage.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
 
@@ -26,96 +40,150 @@
     <!--All data will be displayed from database-->
     <br>
     <hr>
-    <h4 style="text-align: center">Garage Editor</h4>
+    <h4 style="text-align: center">Garage Add</h4>
     <hr>
     <!--    Opening databse area -->
-    <div class="prefix_3 grid_6 suffix_3">
+    <div class="prefix_5">
 
         <!--        Opening form area           -->
 
-        <form class="pure-form pure-form-stacked" action="" id="databaseAdd" name="databaseAdd" method="post">
+        <form action="gformprocess.php" class="pure-form pure-form-stacked" id="databaseAdd" name="databaseAdd"
+              method="post">
             <!--            Data will go inside of here -->
-            <table class="prefix_2 grid_6 suffix_3">
+            <table class="grid_12 alpha">
+                <tr>
+                    <td>Garage Address</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="garageAdd" name="garageAdd"
+                               value="<?php setValue($formdata, 'garageAdd') ?>"/><span class="errors"
+                                                                                        id="addresssError">
+<!--                        Garage address errors will go here          -->
+                            <?php
+                            if (isset($errors['garageAdd']))
+                                echo $errors['garageAdd'];
+                            ?>
+                    </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Garage Phone</td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="phoneNo" name="phoneNo"
+                               value="<?php setValue($formdata, 'phoneNo') ?>"/><span class="errors" id="phoneError">
+<!--                        Phone errors will go here       -->
+                            <?php
+                            if (isset($errors['phoneNo']))
+                                echo $errors['phoneNo'];
+                            ?>
+                    </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Manager Name</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="managerName" name="managerName"
+                               value="<?php setValue($formdata, 'managerName') ?>"/><span class="errors"
+                                                                                          id="mnameError">
+<!--                        Manager name errors will go here           -->
+
+                            <?php
+                            if (isset($errors['managerName']))
+                                echo $errors['managerName'];
+                            ?>
+                    </span>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>Garage Name</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="garageName" value="" /> <span id="gnameError">
-<!--                        Garage Name Errors will go here             -->
+                    <td><input type="text" id="garageName" name="garageName"
+                               value="<?php setValue($formdata, 'garageName') ?>"/> <span class="errors"
+                                                                                          id="garagenameError">
+                            <?php
+                            if (isset($errors['garageName']))
+                                echo $errors['garageName'];
+                            ?>
+                            <!--                        Garage Name Errors will go here             -->
                     </span>
                     </td>
                 </tr>
 
-                <tr>
-                    <td>Garage Address</td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="garageAdd" value=""/><span id="addresssError">
-<!--                        Garage address errors will go here          -->
-                    </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Garage Phone</td>
-                </tr>
-                <tr>
-                    <td><input type="phone" name="phoneNo" value=""/><span id="phoneError">
-<!--                        Phone errors will go here       -->
-                    </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Manager Name</td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="managerName" value=""/><span id="mnameError">
-<!--                        Manager name errors will go here           -->
-                    </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Manager Email</td>
-                </tr>
-                <tr>
-                    <td><input type="email" name="manEmail" value="" /><span id="emailError">
-<!--                        Email Error will go here        -->
-                    </span>
-                    </td>
-                </tr>
                 <tr>
                     <td>Date of Next Service</td>
                 </tr>
                 <tr>
-                    <td><input type="date" name="serviceDate" value="" /><span id="dateError">
+                    <td><input type="date" id="serviceDate" name="serviceDate"
+                               value="<?php setValue($formdata, 'serviceDate') ?>"/><span class="errors" id="dateError">
 <!--            Date Error will go here             -->
+                            <?php
+                            if (isset($errors['serviceDate']))
+                                echo $errors['serviceDate'];
+                            ?>
+
                     </span>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>Manager Email</td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="manEmail" name="manEmail"
+                               value="<?php setValue($formdata, 'managerEmail') ?>"/><span class="errors"
+                                                                                           id="emailError">
+<!--                        Email Error will go here        -->
+                            <?php
+                            if (isset($errors['managerEmail']))
+                                echo $errors['managerEmail'];
+
+                            ?>
+                    </span>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>Garage URL</td>
                 </tr>
                 <tr>
-                    <td><input type="url" name="gURL" value="" /><span id="urlError">
+                    <td><input type="url" id="gURL" name="gURL" value="<?php setValue($formdata, 'garageURL') ?>"/><span
+                            class="errors" id="urlError">
 <!--          URL Error will go here         -->
+                            <?php
+                            if (isset($errors['garageURL']))
+                                echo $errors['garageURL'];
+                            ?>
+
                     </span>
                     </td>
                 </tr>
                 <tr>
-                    <td>Overnight?</td><td>Yes<input type="checkbox" name="overnight" value="Overnight?"></td>
+                    <td>Overnight Facility?</td>
+                </tr>
+                <tr>
+                    <td>Yes<input id="overnighty" type="checkbox" name="overnighty" value="Overnight?"></td>
+                    <td>No<input id="overnightn" type="checkbox" name="overnightn" value="Overnight?"></td>
+
                 </tr>
                 <tr>
 
                 </tr>
-                <tr>
-                    <td>Garage Image</td>
-                </tr>
-                <tr>
-                    <td><input type="image" class="pure-button pure-button-secondary" name=""></td>
-                </tr>
+                <!--                <tr>-->
+                <!--                    <td>Garage Image</td>-->
+                <!--                </tr>-->
+                <!--                <tr>-->
+                <!--                    <td><input type="image" class="pure-button pure-button-secondary image_btn" name=""></td>-->
+                <!--                </tr>-->
 
                 <tr>
-                    <td><input type="submit" value="Committ" class="pure-button pure-button-primary" name="add"></td>
+                    <td><input type="submit" value="Add Garage" class="pure-button pure-button-primary submit_btn"
+                               name="add"></td>
                 </tr>
 
 

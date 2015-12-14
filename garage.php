@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Created by IntelliJ IDEA.
  * User: rorypb
  * Date: 01/12/2015
  * Time: 12:03 PM
  */
-class Garage {
+class Garage
+{
     private $address;
     private $phone;
     private $manager_name;
@@ -29,7 +31,8 @@ class Garage {
         $this->overnight = $on;
     }
 
-    public function getAddress(){
+    public function getAddress()
+    {
         return $this->address;
     }
 
@@ -58,7 +61,8 @@ class Garage {
         return $this->service_date;
     }
 
-    public function getManagerEmail(){
+    public function getManagerEmail()
+    {
         return $this->manager_email;
     }
 
@@ -71,8 +75,6 @@ class Garage {
     {
         return $this->overnight;
     }
-
-
 
 
 }

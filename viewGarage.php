@@ -6,17 +6,29 @@
  * Time: 12:17 PM
  */
 
-require_once 'garage.php';
 require_once 'connection.php';
 require_once 'garageTableGateway.php';
 
+if (!isset($_GET['id'])) {
+    die("Halt");
+}
 
+$garageID = $_GET['garageID'];
 
 $connection = Connection::getInstance();
 $gateway = new garageTableGateway($connection);
 
-$statement = $gateway->getGarages();
+$statement = $gateway->getGarageByID($garageID);
+
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+if ($row) {
+    die("Haaalt");
+}
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,22 +53,20 @@ $statement = $gateway->getGarages();
     </tr>
     <?php
     $row = $statement->fetch(PDO::FETCH_ASSOC);
-    while ($row) {
 
-        echo '<tr class="pure-table-odd">';
-        echo '<td>' . $row['garageAddress'] . '</td>';
-        echo '<td>' . $row['phoneNo'] . '</td>';
-        echo '<td>' . $row['managerName'] . '</td>';
-        echo '<td>' . $row['nameofGarage'] . '</td>';
-        echo '<td>' . $row['garageID'] . '</td>';
-        echo '<td>' . $row['dateService'] . '</td>';
-        echo '<td>' . $row['managerEmail'] . '</td>';
-        echo '<td>' . $row['garageURL'] . '</td>';
-        echo '<td>' . $row['overNight'] . '</td>';
-        echo '</tr>';
+    echo '<tr class="pure-table-odd">';
+    echo '<td>' . $row['garageAddress'] . '</td>';
+    echo '<td>' . $row['phoneNo'] . '</td>';
+    echo '<td>' . $row['managerName'] . '</td>';
+    echo '<td>' . $row['nameofGarage'] . '</td>';
+    echo '<td>' . $row['garageID'] . '</td>';
+    echo '<td>' . $row['dateService'] . '</td>';
+    echo '<td>' . $row['managerEmail'] . '</td>';
+    echo '<td>' . $row['garageURL'] . '</td>';
+    echo '<td>' . $row['overNight'] . '</td>';
+    echo '</tr>';
 
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
-    }
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
 </table>
 </body>

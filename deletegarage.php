@@ -11,14 +11,14 @@ require_once 'Connection.php';
 require_once 'garageTableGateway.php';
 
 
-if (!isset($_GET) || !isset($_GET['id'])) {
+if (!isset($_GET['garageID'])) {
     die("Invalid ID");
 }
 
-$garageID = $_GET['garageID'];
+$id = $_GET['id'];
 
 $connection = Connection::getInstance();
 $gateway = new garageTableGateway($connection);
 
-$gateway->removeGarage($garageID);
+$gateway->removeGarage($id);
 header("Location: index.php");

@@ -11,21 +11,19 @@ require_once 'connection.php';
 require_once 'garageTableGateway.php';
 require_once 'gformprocess.php';
 
-$formdata = array();
-$errors = array();
 
 validate($formdata, $errors);
 
-if (!empty($errors)) {
+if (empty($errors)) {
 
 
-    $garageAddress = $_POST["garageAddress"];
-    $phone_no = $_POST["phoneNo"];
-    $manager_name = $_POST["managerName"];
-    $garage_name = $_POST["nameofGarage"];
-    $garage_id = $_POST["garageID"];
-    $service_date = $_POST["dateService"];
-    $over_night = $_POST["overNight"];
+    $garageAddress = $formdata["garageAddress"];
+    $phone_no = $formdata["phoneNo"];
+    $manager_name = $formdata["managerName"];
+    $garage_name = $formdata["nameofGarage"];
+    $garage_id = $formdata["garageID"];
+    $service_date = $formdata["dateService"];
+    $over_night = $formdata["overNight"];
 
     $garage_url = filter_input(INPUT_POST, 'garageURL', FILTER_SANITIZE_URL);
     $garage_url_valid = filter_var($garage_url, FILTER_VALIDATE_URL);

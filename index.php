@@ -65,10 +65,9 @@ echo "Connected to the database";
         echo '<td>' . $row['managerName'] . '</td>';
         echo '<td>' . $row['nameofGarage'] . '</td>';
         echo '<td>' . $row['garageID'] . '</td>';
-        echo '<td>' . '<a href="viewGarage.php?id=' . $row['garageID']
-            . '"><img src="icons/search67.png" width="30px" height="30px" style="padding-right: 10px"/></a>'
+        echo '<td>' . '<a href="viewGarage.php?id='.$row['garageID'].'"><img src="icons/search67.png" width="30px" height="30px" style="padding-right: 10px"/></a>'
             . '<a href="editGarageForm.php?id=' . $row['garageID'] . '"><img src="icons/edi.png" width="30px" height="30px"/></a>'
-            . '<a href="deletegarage.php?garageID=' . $row['garageID'] . '"><img src="icons/del.png" style="padding-left: 10px" width="30px" height="30px"/></a>';
+            . '<a href="deletegarage.php?id=' . $row['garageID'] . '"><img src="icons/del.png" style="padding-left: 10px" width="30px" height="30px"/></a>';
         echo '</tr>';
 
         $row = $statement->fetch(PDO::FETCH_ASSOC);

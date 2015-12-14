@@ -13,7 +13,7 @@ if (!isset($_GET['id'])) {
     die("Halt");
 }
 
-$garageID = $_GET['id'];
+$garageID = $_GET['garageID'];
 
 $connection = Connection::getInstance();
 $gateway = new garageTableGateway($connection);
@@ -52,7 +52,6 @@ if ($row) {
         <th>Over Night?</th>
     </tr>
     <?php
-    $row = $statement->fetch(PDO::FETCH_ASSOC);
 
     echo '<tr class="pure-table-odd">';
     echo '<td>' . $row['garageAddress'] . '</td>';
@@ -66,7 +65,6 @@ if ($row) {
     echo '<td>' . $row['overNight'] . '</td>';
     echo '</tr>';
 
-    $row = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
 </table>
 </body>

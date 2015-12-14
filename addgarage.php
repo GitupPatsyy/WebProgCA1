@@ -23,7 +23,7 @@ if (!isset($formdata)) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tour Bus Massacre</title>
+    <title>Add Bus Form</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/text.css">
     <link rel="stylesheet" type="text/css" href="css/960.css">
@@ -71,7 +71,7 @@ if (!isset($formdata)) {
                     <td>Garage Phone</td>
                 </tr>
                 <tr>
-                    <td><input type="number" id="phoneNo" name="phoneNo"
+                    <td><input type="text" id="phoneNo" name="phoneNo"
                                value="<?php setValue($formdata, 'phoneNo') ?>"/><span class="errors" id="phoneError">
 <!--                        Phone errors will go here       -->
                             <?php
@@ -119,7 +119,7 @@ if (!isset($formdata)) {
                     <td>Date of Next Service</td>
                 </tr>
                 <tr>
-                    <td><input type="date" id="serviceDate" name="serviceDate"
+                    <td><input type="text" id="serviceDate" name="serviceDate"
                                value="<?php setValue($formdata, 'serviceDate') ?>"/><span class="errors" id="dateError">
 <!--            Date Error will go here             -->
                             <?php
@@ -135,7 +135,7 @@ if (!isset($formdata)) {
                     <td>Manager Email</td>
                 </tr>
                 <tr>
-                    <td><input type="email" id="manEmail" name="manEmail"
+                    <td><input type="text" id="manEmail" name="manEmail"
                                value="<?php setValue($formdata, 'managerEmail') ?>"/><span class="errors"
                                                                                            id="emailError">
 <!--                        Email Error will go here        -->
@@ -152,7 +152,7 @@ if (!isset($formdata)) {
                     <td>Garage URL</td>
                 </tr>
                 <tr>
-                    <td><input type="url" id="gURL" name="gURL" value="<?php setValue($formdata, 'garageURL') ?>"/><span
+                    <td><input type="text" id="gURL" name="gURL" value="<?php setValue($formdata, 'garageURL') ?>"/><span
                             class="errors" id="urlError">
 <!--          URL Error will go here         -->
                             <?php

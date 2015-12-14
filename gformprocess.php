@@ -19,11 +19,11 @@ function validate(&$formdata, &$errors)
 {
     $formdata['garageName'] = filter_input($input_method, "garageName", FILTER_SANITIZE_STRING);
     $formdata['garageAdd'] = filter_input($input_method, "garageAdd", FILTER_SANITIZE_STRING);
-    $formdata['phoneNo'] = filter_input($input_method, "phoneNo", FILTER_SANITIZE_NUMBER);
+    $formdata['phoneNo'] = filter_input($input_method, "phoneNo", FILTER_SANITIZE_STRING);
     $formdata['managerName'] = filter_input($input_method, "managerName", FILTER_SANITIZE_STRING);
-    $formdata['managerEmail'] = filter_input($input_method, "managerEmail", FILTER_SANITIZE_EMAIL);
+    $formdata['managerEmail'] = filter_input($input_method, "managerEmail", FILTER_SANITIZE_STRING);
     $formdata['serviceDate'] = filter_input($input_method, "serviceDate", FILTER_SANITIZE_STRING);
-    $formdata['garageURL'] = filter_input($input_method, "garageURL", FILTER_SANITIZE_URL);
+    $formdata['garageURL'] = filter_input($input_method, "garageURL", FILTER_SANITIZE_STRING);
     $formdata['overnight'] = filter_input($input_method, "overnight", FILTER_SANITIZE_STRING);
 
 
@@ -63,10 +63,10 @@ print_r($_POST);
 print_r($formdata);
 print_r($errors);
 echo '</pre>';
-//
-//
-//if (empty(!$errors)) {
-//    require 'addgarage.php';
-//} else {
-//    require 'createGarage.php';
-//}
+
+
+if (empty(!$errors)) {
+    require 'addgarage.php';
+} else {
+    require 'createGarage.php';
+}

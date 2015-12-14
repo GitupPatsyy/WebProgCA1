@@ -80,13 +80,13 @@ class garageTableGateway
 
     }
 
-    public function removeGarage($garageID)
+    public function removeGarage($id)
     {
         $sqlQuery = "DELETE FROM Web_Garage WHERE garageID= :garageID";
 
         $statement = $this->connection->prepare($sqlQuery);
         $parameters = array(
-            "garageID" => $garageID
+            "garageID" => $id
         );
 
         $status = $statement->execute($parameters);
@@ -94,8 +94,6 @@ class garageTableGateway
         if (!$status) {
             die("Could not delete the garage");
         }
-
-        return ($statement->rowCount() == 1);
 
     }
 

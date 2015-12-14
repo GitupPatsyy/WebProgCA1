@@ -13,7 +13,7 @@ if (!isset($_GET['id'])) {
     die("Halt");
 }
 
-$garageID = $_GET['garageID'];
+$garageID = $_GET['id'];
 
 $connection = Connection::getInstance();
 $gateway = new garageTableGateway($connection);

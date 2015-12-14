@@ -7,16 +7,13 @@
  */
 
 
-//Set the input method for efficiency instead of changing all the variables
-$input_method = INPUT_POST;
-//Formdata array
-$formdata = array();
-//Array for errors
-$errors = array();
-
-
 function validate(&$formdata, &$errors)
 {
+
+    //Set the input method for efficiency instead of changing all the variables
+    $input_method = INPUT_POST;
+    //Formdata array
+
     $formdata['garageName'] = filter_input($input_method, "garageName", FILTER_SANITIZE_STRING);
     $formdata['garageAdd'] = filter_input($input_method, "garageAdd", FILTER_SANITIZE_STRING);
     $formdata['phoneNo'] = filter_input($input_method, "phoneNo", FILTER_SANITIZE_STRING);

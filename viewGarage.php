@@ -13,16 +13,16 @@ if (!isset($_GET['id'])) {
     die("Halt");
 }
 
-$garageID = $_GET['garageID'];
+$id = $_GET['id'];
 
 $connection = Connection::getInstance();
 $gateway = new garageTableGateway($connection);
 
-$statement = $gateway->getGarageByID($garageID);
+$statement = $gateway->getGarageByID($id);
 
 $row = $statement->fetch(PDO::FETCH_ASSOC);
-if ($row) {
-    die("Haaalt");
+if (!$row) {
+    die("Unable to get Garage By ID");
 }
 
 

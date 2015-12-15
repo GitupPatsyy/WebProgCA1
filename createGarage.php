@@ -17,18 +17,18 @@ validate($formdata, $errors);
 if (empty($errors)) {
 
 
-    $garageAddress = $formdata["garageAddress"];
+    $garage_address = $formdata["garageAdd"];
     $phone_no = $formdata["phoneNo"];
     $manager_name = $formdata["managerName"];
-    $garage_name = $formdata["nameofGarage"];
-    $garage_id = $formdata["garageID"];
-    $service_date = $formdata["dateService"];
-    $over_night = $formdata["overNight"];
+    $garage_name = $formdata["garageName"];
+    $garage_id = -1;
+    $service_date = $formdata["serviceDate"];
+    $over_night = true;
 
     $garage_url = filter_input(INPUT_POST, 'garageURL', FILTER_SANITIZE_URL);
     $garage_url_valid = filter_var($garage_url, FILTER_VALIDATE_URL);
 
-    $manager_email = filter_input(INPUT_POST, 'manager_email', FILTER_SANITIZE_EMAIL);
+    $manager_email = filter_input(INPUT_POST, 'managerEmail', FILTER_SANITIZE_EMAIL);
     $manager_email_valid = filter_var($manager_email, FILTER_VALIDATE_EMAIL);
 
     $garage = new Garage($garage_address, $phone_no, $manager_name, $garage_name, $garage_id, $service_date, $manager_email, $garage_url, $over_night);

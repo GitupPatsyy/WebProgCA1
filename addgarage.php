@@ -135,7 +135,7 @@ if (!isset($formdata)) {
                     <td>Manager Email</td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="manEmail" name="manEmail"
+                    <td><input type="text" id="manEmail" name="managerEmail"
                                value="<?php setValue($formdata, 'managerEmail') ?>"/><span class="errors"
                                                                                            id="emailError">
 <!--                        Email Error will go here        -->
@@ -152,7 +152,7 @@ if (!isset($formdata)) {
                     <td>Garage URL</td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="gURL" name="gURL" value="<?php setValue($formdata, 'garageURL') ?>"/><span
+                    <td><input type="text" id="gURL" name="garageURL" value="<?php setValue($formdata, 'garageURL') ?>"/><span
                             class="errors" id="urlError">
 <!--          URL Error will go here         -->
                             <?php

@@ -13,6 +13,17 @@ function setValue($formdata, $fieldname)
 
 }
 
+function setChecked($formdata, $fieldName, $fieldValue) {
+    if (isset($formdata[$fieldName]) && isset($formdata[$fieldName])) {
+        if (is_array($formdata[$fieldName]) && in_array($fieldValue, $formdata[$fieldName])){
+            echo 'checked = "checked"';
+        }
+        else if ($formdata[$fieldName] == $fieldValue){
+            echo 'checked = "checked"';
+        }
+    }   
+}
+
 if (!isset($formdata)) {
     $formdata = array();
 
@@ -47,8 +58,8 @@ if (!isset($formdata)) {
 
         <!--        Opening form area           -->
 
-        <form action="gformprocess.php" class="pure-form pure-form-stacked" id="databaseAdd" name="databaseAdd"
-              method="post">
+        <form action="createGarage.php" class="pure-form pure-form-stacked" id="databaseAdd" name="databaseAdd"
+              method="POST">
             <!--            Data will go inside of here -->
             <table class="grid_12 alpha">
                 <tr>
@@ -167,8 +178,8 @@ if (!isset($formdata)) {
                     <td>Overnight Facility?</td>
                 </tr>
                 <tr>
-                    <td>Yes<input id="overnighty" type="checkbox" name="overnighty" value="Overnight?"></td>
-                    <td>No<input id="overnightn" type="checkbox" name="overnightn" value="Overnight?"></td>
+                    <td>Yes<input type="checkbox" id="overnighty" type="checkbox" name="overnighty" value="Yes" <?php setChecked($formdata, 'overnighty', 'Yes') ?>/></td>
+                    <td>No<input type="checkbox" id="overnightn" type="checkbox" name="overnightn" value="No"<?php setChecked($formdata, 'overnightn', 'No') ?>/></td>
 
                 </tr>
                 <tr>

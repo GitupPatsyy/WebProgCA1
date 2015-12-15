@@ -15,16 +15,16 @@ class Connection
     {
         if (Connection::$connection === NULL) {
             // connect to the database local
-            $host = "localhost";
-            $database = "CA1-TourBusMassacre";
-            $username = "rorypb";
-            $password = "root";
+//            $host = "localhost";
+//            $database = "CA1-TourBusMassacre";
+//            $username = "rorypb";
+//            $password = "root";
 
             // connection for college database
-//            $host = "daneel";
-//            $database = "N00143233-Playground";
-//            $username = "N00143233";
-//            $password = "N00143233";
+            $host = "daneel";
+            $database = "N00143233playground";
+            $username = "N00143233";
+            $password = "N00143233";
 
             $dsn = "mysql:host=" . $host . ";dbname=" . $database;
             Connection::$connection = new PDO($dsn, $username, $password);

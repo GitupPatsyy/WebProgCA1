@@ -54,16 +54,16 @@ function validate(&$formdata, &$errors)
 
     }
 }
+//
+//echo '<pre>';
+//print_r($_POST);
+////print_r($formdata);
+//print_r($errors);
+//echo '</pre>';
 
-echo '<pre>';
-print_r($_POST);
-print_r($formdata);
-print_r($errors);
-echo '</pre>';
 
-
-if (empty(!$errors)) {
-    require 'addgarage.php';
-} else {
+if (empty($errors)) {
     require 'createGarage.php';
+} else {
+    require 'index.php';
 }

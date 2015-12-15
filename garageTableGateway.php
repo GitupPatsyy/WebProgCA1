@@ -53,7 +53,7 @@ class garageTableGateway
         $sqlQuery = "INSERT INTO Web_Garage(garageAddress, phoneNo, managerName, nameofGarage, garageID, dateService, managerEmail, garageURL, overNight)"  .
             "VALUES (:garageAddress, :phoneNo, :managerName, :nameofGarage, :garageID, :dateService, :managerEmail, :garageURL, :overNight)";
 
-        $statement = $this->prepare($sqlQuery);
+        $statement = $this->connection->execute($sqlQuery);
         $parameters = array(
 
             "garageAddress" => $garage->getAddress(),
@@ -71,7 +71,7 @@ class garageTableGateway
         $exec = $statement->execute($parameters);
 
         if (!$exec) {
-            die("Could not get garages");
+            die("Could not insert garage");
         }
 
         $id = $this->connection->lastInsertId();

@@ -11,7 +11,7 @@ require_once 'Connection.php';
 require_once 'garageTableGateway.php';
 
 
-if (!isset($_GET['garageID'])) {
+if (!isset($_GET['id'])) {
     die("Invalid ID");
 }
 

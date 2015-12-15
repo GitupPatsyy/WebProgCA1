@@ -38,9 +38,11 @@ if (empty($errors)) {
     $gateway = new garageTableGateway($connection);
 
     $id = $gateway->insertGarage($garage);
+    
 
 //Redirects the user to the specific page
     header('Location: index.php');
+    exit();
 }
 
 else {

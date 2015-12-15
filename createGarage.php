@@ -21,7 +21,7 @@ if (empty($errors)) {
     $phone_no = $formdata["phoneNo"];
     $manager_name = $formdata["managerName"];
     $garage_name = $formdata["garageName"];
-    $garage_id = -1;
+    $garage_id;
     $service_date = $formdata["serviceDate"];
     $over_night = true;
 

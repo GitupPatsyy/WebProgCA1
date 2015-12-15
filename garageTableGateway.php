@@ -64,7 +64,7 @@ class garageTableGateway
             "dateService" => $garage->getServiceDate(),
             "managerEmail" => $garage->getManagerEmail(),
             "garageURL" => $garage->getGarageURL(),
-            "overNight" => $garage->getOvernight(),
+            "overNight" => $garage->getOvernight()
 
         );
 

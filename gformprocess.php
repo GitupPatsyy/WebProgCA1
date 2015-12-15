@@ -44,8 +44,8 @@ function validate(&$formdata, &$errors)
     }
     if ($formdata['serviceDate'] !== NULL || $formdata['managerEmail'] !== FALSE || $formdata['managerEmail'] !== "") {
         $date_array = explode('/', $formdata['serviceDate']);
-        if (count($date_array) != 3 || !checkdate($date_array[1], $date_array[0], $date_array[2])) {
-            $errors['serviceDate'] = "Invalid Date Format(dd/mm/yyyy)";
+        if (count($date_array) != 3 || !checkdate($date_array[2], $date_array[1], $date_array[0])) {
+            $errors['serviceDate'] = "Invalid Date Format(yyyy/dd/mm)";
         }
         if ($formdata['garageURL'] === NULL || $formdata['garageURL'] === NULL || $formdata['garageURL'] === "") {
             $errors['garageURL'] = "Garage URL is required to create a garage";

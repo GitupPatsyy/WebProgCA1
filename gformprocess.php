@@ -14,6 +14,7 @@ function validate(&$formdata, &$errors)
     $input_method = INPUT_POST;
     //Formdata array
 
+    //Sanitizing data that is input to defeat the sql injection
     $formdata['garageName'] = filter_input($input_method, "garageName", FILTER_SANITIZE_STRING);
     $formdata['garageAdd'] = filter_input($input_method, "garageAdd", FILTER_SANITIZE_STRING);
     $formdata['phoneNo'] = filter_input($input_method, "phoneNo", FILTER_SANITIZE_STRING);

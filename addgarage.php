@@ -199,7 +199,7 @@ if (!isset($formdata)) {
                 <!--                </tr>-->
 
                 <tr>
-                    <td><input type="submit" value="Add Garage" class="pure-button pure-button-primary submit_btn"
+                    <td><input type="submit" id="addgarage" value="Add Garage" class="pure-button pure-button-primary submit_btn"
                                name="add"></td>
                 </tr>
 

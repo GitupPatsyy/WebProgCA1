@@ -5,6 +5,7 @@
  * Date: 18/11/2015
  * Time: 1:42 PM
  */
+//Function to set the value of the formdata to the respective fieldname
 function setValue($formdata, $fieldname)
 {
     if (isset($formdata) && isset($formdata[$fieldname])) {
@@ -12,7 +13,7 @@ function setValue($formdata, $fieldname)
     }
 
 }
-
+//Function to set the check boxs to the value 
 function setChecked($formdata, $fieldName, $fieldValue) {
     if (isset($formdata[$fieldName]) && isset($formdata[$fieldName])) {
         if (is_array($formdata[$fieldName]) && in_array($fieldValue, $formdata[$fieldName])){
@@ -35,12 +36,17 @@ if (!isset($formdata)) {
 <html>
 <head>
     <title>Add Bus Form</title>
+<!--Stylsheets to put the design of the website to 960-->
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/text.css">
     <link rel="stylesheet" type="text/css" href="css/960.css">
+<!--Style for the add garage page-->
     <link rel="stylesheet" type="text/css" href="css/addgarage.css">
     <link rel="stylesheet" type="text/css" href="css/global.css">
+<!--External stylesheet for form style-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<!--Link for Javascript-->
+    <script src="javascript/jsvalidation.js"></script>
 
 
 </head>

@@ -42,7 +42,7 @@ function validate(&$formdata, &$errors)
     if ($formdata['managerEmail'] === NULL || $formdata['managerEmail'] === FALSE || $formdata['managerEmail'] === "") {
         $errors['managerEmail'] = "Manager Email is required to create a garage";
     }
-    if ($formdata['serviceDate'] !== NULL || $formdata['managerEmail'] !== FALSE || $formdata['managerEmail'] !== "") {
+    if ($formdata['serviceDate'] !== NULL || $formdata['serviceDate'] !== FALSE || $formdata['serviceDate'] !== "") {
         $date_array = explode('/', $formdata['serviceDate']);
         if (count($date_array) != 3 || !checkdate($date_array[2], $date_array[1], $date_array[0])) {
             $errors['serviceDate'] = "Invalid Date Format(yyyy/dd/mm)";

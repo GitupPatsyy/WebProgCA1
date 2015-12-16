@@ -22,11 +22,9 @@ echo "Connected to the database";
     <head>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <link rel="stylesheet" href="css/global.css">
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <meta charset="UTF-8">
         <title>Base View of Garages</title>
-        <script src="javascript/delete.js">
-        </script>
+        <script src="javascript/delete.js"></script>
 
     </head>
     <body>
@@ -54,7 +52,7 @@ echo "Connected to the database";
                         echo '<td>' . $row['garageID'] . '</td>';
                         echo '<td>' . '<a href="viewGarage.php?id=' . $row['garageID'] . '"><img src="icons/search67.png" width="30px" height="30px" style="padding-right: 10px"/></a>'
                         . '<a href="#.html"><img src="icons/edi.png" width="30px" height="30px"/></a>'
-                        . '<a class="deletebtn" href="deletegarage.php?id=' . $row['garageID'] . '"><img src="icons/del.png" style="padding-left: 10px" width="30px" height="30px"/></a>';
+                        . '<a class="deletebtn" href="deletegarage.php?id=' . $row['garageID'] . '"><img class="deletebtn" src="icons/del.png" style="padding-left: 10px" width="30px" height="30px"/></a>';
                         echo '</tr>';
 
                         $row = $statement->fetch(PDO::FETCH_ASSOC);
